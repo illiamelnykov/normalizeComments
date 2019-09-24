@@ -13,16 +13,14 @@ const Article = ({
   article,
   comments,
 }) => {
-// console.log(comments);
   useEffect(() => {
     actions.fetchArticle()
     actions.fetchComments()    
   }, [])
 
-  const addLikeToReply = useCallback(id => () => {
-    console.log(' id : ',  id );
+  const addLikeToReply = useCallback(id => () =>     
     actions.addLikeToReply(id)
-  })
+  )
 
   const { entities, result } = comments 
   if (!article.id) {
